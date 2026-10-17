@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reen Bank - Register</title>
+
+    <link rel="stylesheet" href="/dist/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body
+    class="bg-[url('/src/assets/images/register.png')] bg-cover bg-center bg-fixed min-h-screen"
+  >
+    <main
+      class="min-h-screen w-full flex items-center px-5 sm:px-8 lg:px-12 2xl:px-16"
+    >
+      <!-- Full-width two-column layout (no max-width cap) -->
+      <div
+        class="w-full grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-24 items-center"
+      >
+        <!-- ============ LEFT SIDE ============ -->
+        <section class="text-gray-900">
+          <!-- Logo -->
+          <div class="mb-4 sm:mb-10 lg:mb-20">
+            <img
+              src="/src/assets/logos/logo.png"
+              alt="Reen Bank Logo"
+              class="w-[150px] h-20 sm:w-30 sm:h-20 md:w-40 md:h-40 2xl:w-52 2xl:h-52 object-contain"
+            />
+          </div>
+
+          <!-- Text -->
+          <div>
+            <h2
+              class="text-2xl 2xl:text-3xl font-semibold text-green-500 mb-2 sm:mb-3"
+            >
+              Reen Bank
+            </h2>
+
+            <h1
+              class="text-4xl sm:text-5xl md:text-6xl 2xl:text-8xl font-bold leading-tight mb-4 sm:mb-6"
+            >
+              Experience <br />hassle-free banking
+            </h1>
+
+            <p
+              class="text-gray-600 text-lg sm:text-xl 2xl:text-3xl max-w-2xl 2xl:max-w-3xl leading-relaxed"
+            >
+              Experience simple, secure, and stress-free banking. Say goodbye to
+              long queues and complex procedures and hello to hassle-free
+              banking with Reen Bank.
+            </p>
+          </div>
+
+          <!-- Socials -->
+          <div class="flex gap-4 mt-6 sm:mt-14 lg:mt-28">
+            <a
+              href="#"
+              class="bg-green-500 text-white w-11 h-11 rounded-full flex items-center justify-center text-lg hover:bg-green-600 transition"
+            >
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a
+              href="#"
+              class="bg-green-500 text-white w-11 h-11 rounded-full flex items-center justify-center text-lg hover:bg-green-600 transition"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a
+              href="#"
+              class="bg-green-500 text-white w-11 h-11 rounded-full flex items-center justify-center text-lg hover:bg-green-600 transition"
+            >
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+          </div>
+        </section>
+
+        <!-- ============ REGISTER CARD ============ -->
+        <section class="w-full flex items-center justify-center">
+          <section class="w-[90%]">
+            <div
+              class="w-full max-w-2xl 2xl:max-w-3xl mx-auto lg:ml-auto lg:mr-0 bg-white rounded-3xl px-5 sm:px-8 md:px-14 py-6 sm:py-10 shadow-lg"
+            >
+              <h1
+                class="text-3xl sm:text-4xl 2xl:text-5xl font-semibold text-green-500 mb-5 sm:mb-10"
+              >
+                Register
+              </h1>
+
+              <form id="registerForm">
+                <!-- Name -->
+                <label
+                  for="name"
+                  class="block text-base 2xl:text-lg font-semibold mb-2"
+                  >Name</label
+                >
+                <div
+                  class="border border-gray-400 rounded-xl h-12 sm:h-14 2xl:h-16 flex items-center px-4 mb-4 sm:mb-5"
+                >
+                  <input
+                    id="name"
+                    type="text"
+                    placeholder="Enter name here"
+                    class="w-full outline-none text-base 2xl:text-lg"
+                    required
+                  />
+                  <i class="fa-regular fa-user text-gray-400"></i>
+                </div>
+
+                <!-- Email -->
+                <label
+                  for="email"
+                  class="block text-base 2xl:text-lg font-semibold mb-2"
+                  >Email</label
+                >
+                <div
+                  class="border border-gray-400 rounded-xl h-12 sm:h-14 2xl:h-16 flex items-center px-4 mb-4 sm:mb-5"
+                >
+                  <input
+                    id="email"
+                    type="email"
+                    placeholder="Enter your Email"
+                    class="w-full outline-none text-base 2xl:text-lg"
+                    required
+                  />
+                  <i class="fa-regular fa-envelope text-gray-400"></i>
+                </div>
+
+                <!-- Password -->
+                <label
+                  for="password"
+                  class="block text-base 2xl:text-lg font-semibold mb-2"
+                  >Password</label
+                >
+                <div
+                  class="border border-gray-400 rounded-xl h-12 sm:h-14 2xl:h-16 flex items-center px-4 mb-4 sm:mb-5"
+                >
+                  <input
+                    id="password"
+                    type="password"
+                    placeholder="Enter your Password"
+                    class="w-full outline-none text-base 2xl:text-lg"
+                    required
+                  />
+                  <i class="fa-solid fa-lock text-gray-400"></i>
+                </div>
+
+                <!-- Terms -->
+                <div class="flex items-start gap-3 mb-6 sm:mb-9">
+                  <input
+                    id="terms"
+                    type="checkbox"
+                    class="w-5 h-5 mt-1 accent-green-500"
+                    required
+                  />
+                  <p class="text-base 2xl:text-lg text-gray-500">
+                    I agree to all the
+                    <a href="#" class="text-green-500 font-semibold">Terms</a>,
+                    <a href="#" class="text-green-500 font-semibold"
+                      >Privacy Policy</a
+                    >
+                    and
+                    <a href="#" class="text-green-500 font-semibold">Fees.</a>
+                  </p>
+                </div>
+
+                <!-- Submit -->
+                <button
+                  type="submit"
+                  class="w-full h-12 sm:h-14 2xl:h-16 bg-green-500 hover:bg-green-600 text-white font-semibold text-xl rounded-xl transition"
+                >
+                  Register
+                </button>
+
+                <!-- Login link -->
+                <p class="text-base 2xl:text-lg text-gray-500 mt-4 sm:mt-6">
+                  Already have an Account?
+                  <a
+                    href="login1.html"
+                    class="text-green-500 font-semibold ml-1"
+                    >Log in.</a
+                  >
+                </p>
+              </form>
+            </div>
+          </section>
+        </section>
+      </div>
+    </main>
+
+    <script src="register.js"></script>
+  </body>
+</html>

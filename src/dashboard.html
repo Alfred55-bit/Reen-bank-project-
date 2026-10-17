@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reen Bank - Dashboard</title>
+    <link rel="stylesheet" href="/dist/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Oswald:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "DM Sans", sans-serif;
+      }
+      .num {
+        font-family: "Oswald", sans-serif;
+        letter-spacing: 0.01em;
+      } /* condensed numbers like the design */
+    </style>
+  </head>
+
+  <body
+    class="bg-[url('/src/assets/images/register.png')] bg-cover bg-center bg-fixed min-h-screen text-gray-800"
+  >
+    <div class="min-h-screen bg-white/40">
+      <!-- ================= HEADER ================= -->
+      <header
+        class="flex items-center h-[90px] lg:h-[160px] px-6 md:px-12 xl:px-24"
+      >
+        <!-- column 1: logo -->
+        <div class="flex items-center gap-4 lg:w-[220px] xl:w-[360px] shrink-0">
+          <img
+            src="/src/assets/logos/logo.png"
+            class="w-12 h-12 lg:w-16 lg:h-16 object-contain"
+            alt="Reen Bank"
+          />
+        </div>
+
+        <!-- column 2: page title + name / account number -->
+        <div
+          class="hidden md:flex flex-1 lg:max-w-[711px] items-center justify-between px-6 lg:px-0"
+        >
+          <h1 class="text-3xl lg:text-[40px] font-bold">Overview</h1>
+          <div class="text-right">
+            <p id="headerName" class="text-emerald-500 font-medium">User</p>
+            <p
+              id="headerAccount"
+              class="num text-3xl lg:text-[40px] font-semibold leading-tight"
+            >
+              0000000000
+            </p>
+          </div>
+        </div>
+
+        <!-- column 3: search, bell, avatar -->
+        <div
+          class="ml-auto flex items-center gap-5 lg:w-[340px] xl:w-[480px] shrink-0"
+        >
+          <button
+            id="searchBtn"
+            class="flex items-center gap-3 text-gray-500 text-lg lg:mr-auto"
+            title="Search"
+          >
+            <i class="fa-solid fa-magnifying-glass text-2xl text-gray-700"></i>
+            <span class="hidden lg:inline">Search</span>
+          </button>
+
+          <button
+            id="notificationBtn"
+            class="relative text-2xl"
+            title="Notifications"
+          >
+            <i class="fa-regular fa-bell"></i>
+            <span
+              id="notificationDot"
+              class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-red-500 rounded-full"
+            ></span>
+          </button>
+
+          <button
+            id="profileBtn"
+            class="w-12 h-12 lg:w-14 lg:h-14 rounded-full overflow-hidden shadow"
+          >
+            <img
+              src="/src/assets/logos/logo.png"
+              class="w-full h-full object-cover"
+              alt="Profile"
+            />
+          </button>
+        </div>
+      </header>
+
+      <!-- search -->
+      <div id="searchBox" class="hidden px-6 md:px-12 xl:px-24 pb-4">
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Search accounts, users, transactions..."
+          class="w-full max-w-[500px] p-3 rounded-xl border border-gray-300 outline-none focus:border-emerald-500 bg-white"
+        />
+      </div>
+
+      <!-- ================= BODY: sidebar | content | right column ================= -->
+      <main
+        class="flex flex-col lg:flex-row gap-8 lg:gap-6 xl:gap-0 px-6 md:px-12 xl:px-24 pt-6 lg:pt-20 pb-10 lg:min-h-[calc(100vh-160px)]"
+      >
+        <!-- SIDEBAR -->
+        <aside
+          class="w-full lg:w-[220px] xl:w-[360px] shrink-0 flex lg:flex-col"
+        >
+          <button
+            class="navBtn flex items-center gap-8 h-[72px] text-xl text-gray-700"
+            data-section="overview"
+          >
+            <i class="fa-solid fa-grip w-9 text-center text-2xl"></i
+            ><span>Overview</span>
+          </button>
+          <button
+            class="navBtn flex items-center gap-8 h-[72px] text-xl text-gray-700"
+            data-section="accounts"
+          >
+            <i
+              class="fa-regular fa-credit-card w-9 text-center text-2xl"
+              data-solid="1"
+            ></i
+            ><span>Accounts</span>
+          </button>
+          <button
+            class="navBtn flex items-center gap-8 h-[72px] text-xl text-gray-700"
+            data-section="transactions"
+          >
+            <i
+              class="fa-solid fa-arrow-right-arrow-left w-9 text-center text-2xl"
+            ></i
+            ><span>Transactions</span>
+          </button>
+          <button
+            class="navBtn flex items-center gap-8 h-[72px] text-xl text-gray-700"
+            data-section="profile"
+          >
+            <i
+              class="fa-regular fa-user w-9 text-center text-2xl"
+              data-solid="1"
+            ></i
+            ><span>Profile</span>
+          </button>
+          <button
+            id="logoutBtn"
+            class="flex items-center gap-8 h-[72px] text-xl text-gray-700 mt-auto"
+          >
+            <i class="fa-solid fa-arrow-left-long w-9 text-center text-2xl"></i
+            ><span>Logout</span>
+          </button>
+        </aside>
+
+        <!-- CONTENT -->
+        <section class="flex-1 min-w-0 max-w-[711px]">
+          <!-- ===== OVERVIEW ===== -->
+          <div id="overviewSection">
+            <!-- Current Account Balance -->
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-7">
+              <h2 class="text-xl md:text-2xl font-bold">
+                Current Account Balance
+              </h2>
+              <div class="flex items-center gap-3">
+                <button
+                  id="balanceToggle"
+                  class="w-[46px] h-[46px] bg-gray-100 rounded-xl"
+                  title="Hide balance"
+                >
+                  <i id="balanceIcon" class="fa-regular fa-eye-slash"></i>
+                </button>
+                <div
+                  class="relative flex items-center h-[46px] bg-gray-100 rounded-xl pl-4 pr-9 gap-3"
+                >
+                  <i class="fa-regular fa-calendar text-gray-600"></i>
+                  <select
+                    id="dateFilter"
+                    class="bg-transparent outline-none appearance-none text-xs font-bold text-gray-600"
+                  ></select>
+                  <i
+                    class="fa-solid fa-chevron-down absolute right-4 text-[10px] text-gray-600 pointer-events-none"
+                  ></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- balance card -->
+            <div
+              class="bg-[#D3F3E6] rounded-xl min-h-[144px] px-6 md:px-10 py-6 grid grid-cols-1 md:grid-cols-[64px_repeat(3,1fr)] items-center gap-4 md:gap-8 mb-14"
+            >
+              <img
+                src="/src/assets/logos/logo.png"
+                class="hidden md:block w-16 h-16 object-contain"
+                alt=""
+              />
+              <div>
+                <p class="text-indigo-900 text-[15px]">Current Balance</p>
+                <p
+                  id="balanceAmount"
+                  class="num text-2xl md:text-[28px] font-semibold mt-1"
+                >
+                  ₦0.00
+                </p>
+              </div>
+              <div>
+                <p class="text-indigo-900 text-[15px]">Income</p>
+                <p
+                  id="incomeAmount"
+                  class="num text-2xl md:text-[28px] font-semibold mt-1"
+                >
+                  ₦0.00
+                </p>
+              </div>
+              <div>
+                <p class="text-indigo-900 text-[15px]">Expense</p>
+                <p
+                  id="expenseAmount"
+                  class="num text-2xl md:text-[28px] font-semibold mt-1"
+                >
+                  ₦0.00
+                </p>
+              </div>
+            </div>
+
+            <!-- Accounts -->
+            <div class="flex items-center justify-between mb-7">
+              <h2 class="text-2xl font-bold">Accounts</h2>
+              <button
+                id="addAccountBtn"
+                class="w-[46px] h-[46px] bg-gray-100 rounded-xl text-xl"
+                title="Add account"
+              >
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+            <div
+              id="accountsContainer"
+              class="grid grid-cols-1 md:grid-cols-3 gap-5 xl:gap-[47px] mb-14"
+            ></div>
+
+            <!-- Statistics -->
+            <div class="flex items-center justify-between mb-7">
+              <h2 class="text-2xl font-bold">Statistics</h2>
+              <div
+                class="relative flex items-center h-[46px] bg-gray-100 rounded-xl pl-4 pr-9"
+              >
+                <select
+                  id="statsFilter"
+                  class="bg-transparent outline-none appearance-none text-xs font-bold text-gray-600"
+                ></select>
+                <i
+                  class="fa-solid fa-chevron-down absolute right-4 text-[10px] text-gray-600 pointer-events-none"
+                ></i>
+              </div>
+            </div>
+
+            <div class="space-y-10">
+              <div
+                class="flex flex-wrap md:flex-nowrap items-center gap-x-4 gap-y-3"
+              >
+                <div
+                  class="w-12 h-12 shrink-0 rounded-lg border-2 border-emerald-500 text-emerald-500 font-bold text-xl flex items-center justify-center"
+                >
+                  rb
+                </div>
+                <span
+                  class="w-[100px] md:w-[130px] font-medium text-gray-600 text-lg"
+                  >Income</span
+                >
+                <div
+                  class="order-last w-full md:order-none md:w-auto md:flex-1 h-3 rounded-full bg-gray-100"
+                >
+                  <div
+                    id="incomeBar"
+                    class="h-full rounded-full bg-emerald-500"
+                    style="width: 0%"
+                  ></div>
+                </div>
+                <strong
+                  id="statsIncome"
+                  class="num ml-auto md:ml-0 md:w-[150px] text-right text-[26px] font-semibold"
+                  >₦0.00</strong
+                >
+              </div>
+
+              <div
+                class="flex flex-wrap md:flex-nowrap items-center gap-x-4 gap-y-3"
+              >
+                <div
+                  class="w-12 h-12 shrink-0 rounded-lg border-2 border-red-500 text-red-500 font-bold text-xl flex items-center justify-center"
+                >
+                  rb
+                </div>
+                <span
+                  class="w-[100px] md:w-[130px] font-medium text-gray-600 text-lg"
+                  >Expense</span
+                >
+                <div
+                  class="order-last w-full md:order-none md:w-auto md:flex-1 h-3 rounded-full bg-gray-100"
+                >
+                  <div
+                    id="expenseBar"
+                    class="h-full rounded-full bg-red-500"
+                    style="width: 0%"
+                  ></div>
+                </div>
+                <strong
+                  id="statsExpense"
+                  class="num ml-auto md:ml-0 md:w-[150px] text-right text-[26px] font-semibold"
+                  >₦0.00</strong
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- other pages (filled by dashboard.js) -->
+          <div id="accountsSection" class="hidden">
+            <div id="allAccountsContainer"></div>
+          </div>
+          <div id="transactionsSection" class="hidden">
+            <div id="transactionsContainer"></div>
+          </div>
+          <div id="profileSection" class="hidden"></div>
+        </section>
+
+        <!-- RIGHT COLUMN -->
+        <aside class="w-full lg:ml-auto lg:w-[340px] xl:w-[480px] shrink-0">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-2xl font-bold">Transactions</h2>
+            <button
+              id="viewTransactionsBtn"
+              class="text-emerald-500 text-2xl"
+              aria-label="View all transactions"
+            >
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+
+          <div id="sideTransactions"></div>
+
+          <button
+            id="proBtn"
+            class="mt-[50px] w-full h-[217px] rounded-2xl bg-gradient-to-br from-emerald-400 to-emerald-500 text-white text-left p-6 flex flex-col justify-between"
+          >
+            <i class="fa-solid fa-arrow-right text-xl"></i>
+            <div>
+              <p class="text-[32px] font-bold leading-tight">Upgrade to PRO</p>
+              <p>Sign in on more than one device</p>
+            </div>
+          </button>
+        </aside>
+      </main>
+    </div>
+
+    <!-- notifications (content is filled by dashboard.js) -->
+    <div
+      id="notificationPopup"
+      class="hidden fixed top-24 right-6 bg-white rounded-xl shadow-xl p-5 z-50"
+    ></div>
+
+    <!-- add account -->
+    <div
+      id="accountPopup"
+      class="hidden fixed inset-0 bg-black/50 items-center justify-center z-50 px-5"
+    >
+      <div class="bg-white rounded-2xl p-8 w-full max-w-[400px]">
+        <div class="flex justify-between">
+          <h2 class="text-xl font-bold">Add Account</h2>
+          <button id="closeAccountPopup" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <input
+          id="newAccountName"
+          type="text"
+          placeholder="Account name"
+          class="w-full border p-3 rounded-xl mt-6 outline-none"
+        />
+        <button
+          id="saveAccountBtn"
+          class="w-full bg-emerald-500 text-white font-semibold p-3 rounded-xl mt-4"
+        >
+          Create Account
+        </button>
+      </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>

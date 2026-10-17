@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reen Bank - Login</title>
+
+    <link rel="stylesheet" href="/dist/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body
+    class="bg-[url('/src/assets/images/register.png')] bg-cover bg-center bg-fixed min-h-screen"
+  >
+    <main
+      class="min-h-screen w-full flex items-center px-5 sm:px-8 lg:px-12 2xl:px-16 py-10"
+    >
+      <!-- Full-width two-column layout (no max-width cap, so no big empty sides) -->
+      <div class="w-full grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+        <!-- ============ LEFT SIDE ============ -->
+        <section class="text-gray-900">
+          <!-- Logo -->
+          <div class="mb-10 lg:mb-20">
+            <img
+              src="/src/assets/logos/logo.png"
+              alt="Reen Bank Logo"
+              class="w-32 h-32 md:w-40 md:h-40 2xl:w-52 2xl:h-52 object-contain"
+            />
+          </div>
+
+          <!-- Welcome text -->
+          <div>
+            <p
+              class="text-emerald-500 text-2xl 2xl:text-3xl font-semibold mb-3"
+            >
+              Reen Bank
+            </p>
+
+            <h1
+              class="text-5xl md:text-6xl 2xl:text-8xl font-semibold tracking-tight mb-6"
+            >
+              Welcome Back
+            </h1>
+
+            <p
+              class="text-gray-600 text-xl 2xl:text-3xl max-w-xl 2xl:max-w-3xl"
+            >
+              Enter Your Details to login to your Banking Dashboard again!
+            </p>
+          </div>
+
+          <!-- Socials -->
+          <div class="flex gap-4 mt-14 lg:mt-28">
+            <a
+              href="#"
+              class="w-11 h-11 rounded-full bg-emerald-500 text-white flex items-center justify-center text-lg hover:bg-emerald-600 transition"
+            >
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a
+              href="#"
+              class="w-11 h-11 rounded-full bg-emerald-500 text-white flex items-center justify-center text-lg hover:bg-emerald-600 transition"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a
+              href="#"
+              class="w-11 h-11 rounded-full bg-emerald-500 text-white flex items-center justify-center text-lg hover:bg-emerald-600 transition"
+            >
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+          </div>
+        </section>
+
+        <!-- ============ LOGIN CARD ============ -->
+        <section>
+          <form id="loginForm">
+            <div
+              class="bg-white rounded-3xl p-8 md:p-14 shadow-[0_20px_60px_rgba(0,0,0,0.08)] w-full max-w-2xl 2xl:max-w-3xl mx-auto lg:ml-auto lg:mr-0"
+            >
+              <h2
+                class="text-4xl 2xl:text-5xl font-semibold text-emerald-500 mb-10"
+              >
+                Login
+              </h2>
+
+              <!-- Email -->
+              <div class="mb-6">
+                <label
+                  for="loginEmail"
+                  class="block text-base 2xl:text-lg font-semibold text-gray-800 mb-2"
+                  >Email</label
+                >
+                <div class="relative">
+                  <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="Enter your Email"
+                    autocomplete="email"
+                    class="w-full h-14 2xl:h-16 border border-gray-400 rounded-xl px-5 pr-14 text-base 2xl:text-lg outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 transition"
+                  />
+                  <i
+                    class="fa-regular fa-envelope absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 text-lg"
+                  ></i>
+                </div>
+              </div>
+
+              <!-- Password -->
+              <div class="mb-9">
+                <label
+                  for="password"
+                  class="block text-base 2xl:text-lg font-semibold text-gray-800 mb-2"
+                  >Password</label
+                >
+                <div class="relative">
+                  <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your Password"
+                    autocomplete="current-password"
+                    class="w-full h-14 2xl:h-16 border border-gray-400 rounded-xl px-5 pr-28 text-base 2xl:text-lg outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 transition"
+                  />
+
+                  <button
+                    type="button"
+                    id="forgotPassword"
+                    class="absolute right-14 top-0 h-full px-3 text-base font-semibold text-emerald-500"
+                  >
+                    Forgot?
+                  </button>
+
+                  <i
+                    class="fa-solid fa-lock absolute right-5 top-1/2 -translate-y-1/2 text-gray-400"
+                  ></i>
+                </div>
+              </div>
+
+              <!-- Submit -->
+              <button
+                type="submit"
+                id="loginButton"
+                class="w-full h-14 2xl:h-16 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white text-xl font-semibold transition duration-300 shadow-md"
+              >
+                Login
+              </button>
+
+              <!-- Register link -->
+              <p class="text-base 2xl:text-lg text-gray-500 mt-6">
+                Don't Have an Account?
+                <a
+                  href="register.html"
+                  class="text-emerald-500 font-semibold ml-1"
+                  >Register</a
+                >
+              </p>
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <script src="login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>NovaBank — Banking Made Simple</title>
+
+  <!-- Tailwind CSS -->
+<link rel="stylesheet" href="/dist/output.css" />
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: "#07152F",
+            primary: "#2563EB",
+            cyan: "#06B6D4"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-slate-50 text-slate-900">
+
+  <!-- =========================
+       NAVBAR
+  ========================== -->
+
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+
+    <nav class="max-w-7xl mx-auto px-5 lg:px-8 h-20 flex items-center justify-between">
+
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2">
+
+        <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white font-bold text-xl">
+          N
+        </div>
+
+        <span class="text-xl font-bold text-slate-900">
+          Nova<span class="text-blue-600">Bank</span>
+        </span>
+
+      </a>
+
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center gap-8">
+
+        <a href="#features"
+           class="text-sm font-medium text-slate-600 hover:text-blue-600 transition">
+          Features
+        </a>
+
+        <a href="#security"
+           class="text-sm font-medium text-slate-600 hover:text-blue-600 transition">
+          Security
+        </a>
+
+        <a href="#how-it-works"
+           class="text-sm font-medium text-slate-600 hover:text-blue-600 transition">
+          How it works
+        </a>
+
+        <a href="#about"
+           class="text-sm font-medium text-slate-600 hover:text-blue-600 transition">
+          About
+        </a>
+
+      </div>
+
+
+      <!-- Desktop Buttons -->
+      <div class="hidden md:flex items-center gap-3">
+
+        <a href="login.html"
+           class="px-5 py-2.5 rounded-xl font-semibold text-slate-700 hover:bg-slate-100 transition">
+          Login
+        </a>
+
+        <a href="register.html"
+           class="px-5 py-2.5 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition shadow-lg shadow-blue-600/20">
+          Get Started
+        </a>
+
+      </div>
+
+
+      <!-- Mobile Menu Button -->
+      <button id="menuBtn"
+              class="md:hidden p-2 rounded-lg hover:bg-slate-100">
+
+        <svg class="w-6 h-6"
+             fill="none"
+             stroke="currentColor"
+             viewBox="0 0 24 24">
+
+          <path stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16">
+          </path>
+
+        </svg>
+
+      </button>
+
+    </nav>
+
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu"
+         class="hidden md:hidden bg-white border-t border-slate-200">
+
+      <div class="px-5 py-5 space-y-3">
+
+        <a href="#features"
+           class="block py-2 text-slate-600">
+          Features
+        </a>
+
+        <a href="#security"
+           class="block py-2 text-slate-600">
+          Security
+        </a>
+
+        <a href="#how-it-works"
+           class="block py-2 text-slate-600">
+          How it works
+        </a>
+
+        <a href="#about"
+           class="block py-2 text-slate-600">
+          About
+        </a>
+
+        <div class="pt-3 border-t border-slate-200 flex gap-3">
+
+          <a href="login.html"
+             class="flex-1 text-center py-3 rounded-xl bg-slate-100 font-semibold">
+            Login
+          </a>
+
+          <a href="register.html"
+             class="flex-1 text-center py-3 rounded-xl bg-blue-600 text-white font-semibold">
+            Get Started
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <main>
+
+    <section class="pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+
+      <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+        <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+
+          <!-- Hero Text -->
+
+          <div>
+
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-blue-700 text-sm font-semibold mb-6">
+
+              <span class="w-2 h-2 rounded-full bg-blue-600"></span>
+
+              Banking made simpler
+
+            </div>
+
+
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-950 leading-[1.05]">
+
+              Your money.
+              <span class="text-blue-600">
+                Your control.
+              </span>
+
+            </h1>
+
+
+            <p class="mt-6 text-lg text-slate-600 leading-relaxed max-w-xl">
+
+              Manage your money, make transfers, track transactions and
+              manage your digital card — all from one simple banking
+              experience.
+
+            </p>
+
+
+            <!-- Buttons -->
+
+            <div class="mt-8 flex flex-col sm:flex-row gap-4">
+
+              <a href="register.html"
+                 class="inline-flex justify-center items-center px-7 py-4 rounded-xl bg-blue-600 text-white font-bold hover:bg-blue-700 transition shadow-xl shadow-blue-600/20">
+
+                Create Free Account
+
+                <svg class="w-5 h-5 ml-2"
+                     fill="none"
+                     stroke="currentColor"
+                     viewBox="0 0 24 24">
+
+                  <path stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M13 7l5 5m0 0l-5 5m5-5H6">
+                  </path>
+
+                </svg>
+
+              </a>
+
+
+              <a href="login.html"
+                 class="inline-flex justify-center items-center px-7 py-4 rounded-xl bg-white border border-slate-300 text-slate-800 font-bold hover:bg-slate-100 transition">
+
+                Login to Account
+
+              </a>
+
+            </div>
+
+
+            <!-- Small trust text -->
+
+            <div class="mt-8 flex flex-wrap gap-6 text-sm text-slate-500">
+
+              <div class="flex items-center gap-2">
+
+                <span class="text-green-600">✓</span>
+
+                No hidden fees
+
+              </div>
+
+              <div class="flex items-center gap-2">
+
+                <span class="text-green-600">✓</span>
+
+                Fast transfers
+
+              </div>
+
+              <div class="flex items-center gap-2">
+
+                <span class="text-green-600">✓</span>
+
+                Secure platform
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- Hero Banking Card -->
+
+          <div class="relative">
+
+            <!-- Decorative circles -->
+
+            <div class="absolute -top-10 -right-10 w-40 h-40 bg-blue-200 rounded-full blur-3xl opacity-60"></div>
+
+            <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-cyan-200 rounded-full blur-3xl opacity-60"></div>
+
+
+            <!-- Dashboard Card -->
+
+            <div class="relative bg-white rounded-3xl border border-slate-200 shadow-2xl p-5 sm:p-7">
+
+              <!-- Dashboard header -->
+
+              <div class="flex items-center justify-between mb-7">
+
+                <div>
+
+                  <p class="text-sm text-slate-500">
+                    Available balance
+                  </p>
+
+                  <h2 class="text-3xl font-bold text-slate-950 mt-1">
+                    ₦2,845,750.00
+                  </h2>
+
+                </div>
+
+
+                <div class="w-11 h-11 rounded-xl bg-blue-50 flex items-center justify-center">
+
+                  <svg class="w-6 h-6 text-blue-600"
+                       fill="none"
+                       stroke="currentColor"
+                       viewBox="0 0 24 24">
+
+                    <path stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                    </path>
+
+                  </svg>
+
+                </div>
+
+              </div>
+
+
+              <!-- Virtual card -->
+
+              <div class="rounded-2xl p-6 bg-gradient-to-br from-blue-700 via-blue-600 to-cyan-500 text-white shadow-xl">
+
+                <div class="flex justify-between items-start">
+
+                  <div>
+
+                    <p class="text-xs opacity-80">
+                      NOVABANK
+                    </p>
+
+                    <p class="text-sm mt-1 opacity-80">
+                      DEMO CARD
+                    </p>
+
+                  </div>
+
+
+                  <div class="text-xl font-bold">
+                    VISA
+                  </div>
+
+                </div>
+
+
+                <div class="mt-10 text-xl sm:text-2xl tracking-widest font-medium">
+
+                  •••• •••• •••• 4821
+
+                </div>
+
+
+                <div class="mt-6 flex justify-between">
+
+                  <div>
+
+                    <p class="text-[10px] opacity-70">
+                      CARD HOLDER
+                    </p>
+
+                    <p class="text-sm font-semibold">
+                      ALEX JOHNSON
+                    </p>
+
+                  </div>
+
+
+                  <div>
+
+                    <p class="text-[10px] opacity-70">
+                      EXPIRES
+                    </p>
+
+                    <p class="text-sm font-semibold">
+                      12/29
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <!-- Recent transactions -->
+
+              <div class="mt-7">
+
+                <div class="flex items-center justify-between mb-4">
+
+                  <h3 class="font-bold text-slate-900">
+                    Recent transactions
+                  </h3>
+
+                  <span class="text-sm text-blue-600 font-semibold">
+                    View all
+                  </span>
+
+                </div>
+
+
+                <!-- Transaction -->
+
+                <div class="flex items-center justify-between py-3 border-b border-slate-100">
+
+                  <div class="flex items-center gap-3">
+
+                    <div class="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center text-green-600">
+
+                      ↓
+
+                    </div>
+
+                    <div>
+
+                      <p class="font-semibold text-sm">
+                        Salary
+                      </p>
+
+                      <p class="text-xs text-slate-500">
+                        Today, 9:32 AM
+                      </p>
+
+                    </div>
+
+                  </div>
+
+                  <p class="font-bold text-green-600">
+                    +₦450,000
+                  </p>
+
+                </div>
+
+
+                <!-- Transaction -->
+
+                <div class="flex items-center justify-between py-3">
+
+                  <div class="flex items-center gap-3">
+
+                    <div class="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center text-red-600">
+
+                      ↑
+
+                    </div>
+
+                    <div>
+
+                      <p class="font-semibold text-sm">
+                        Electricity
+                      </p>
+
+                      <p class="text-xs text-slate-500">
+                        Yesterday
+                      </p>
+
+                    </div>
+
+                  </div>
+
+                  <p class="font-bold text-slate-900">
+                    -₦35,500
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         STATS
+    ========================== -->
+
+    <section class="py-12 bg-white border-y border-slate-200">
+
+      <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+
+          <div>
+
+            <p class="text-3xl font-extrabold text-slate-950">
+              24/7
+            </p>
+
+            <p class="text-sm text-slate-500 mt-1">
+              Account access
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <p class="text-3xl font-extrabold text-slate-950">
+              Fast
+            </p>
+
+            <p class="text-sm text-slate-500 mt-1">
+              Transfers
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <p class="text-3xl font-extrabold text-slate-950">
+              Secure
+            </p>
+
+            <p class="text-sm text-slate-500 mt-1">
+              Platform
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <p class="text-3xl font-extrabold text-slate-950">
+              Simple
+            </p>
+
+            <p class="text-sm text-slate-500 mt-1">
+              Experience
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         FEATURES
+    ========================== -->
+
+    <section id="features" class="py-24">
+
+      <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+        <div class="max-w-2xl mb-14">
+
+          <p class="text-blue-600 font-bold uppercase tracking-wider text-sm">
+            Features
+          </p>
+
+          <h2 class="mt-3 text-4xl sm:text-5xl font-extrabold text-slate-950">
+            Everything you need to manage your money.
+          </h2>
+
+          <p class="mt-5 text-lg text-slate-600">
+            A simple banking experience designed around the things
+            you use every day.
+          </p>
+
+        </div>
+
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+
+          <!-- Feature -->
+
+          <div class="bg-white border border-slate-200 rounded-2xl p-7 hover:-translate-y-1 hover:shadow-xl transition">
+
+            <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6">
+
+              💸
+
+            </div>
+
+            <h3 class="text-xl font-bold">
+              Easy Transfers
+            </h3>
+
+            <p class="mt-3 text-slate-600 leading-relaxed">
+              Send money quickly using a simple and intuitive
+              transfer experience.
+            </p>
+
+          </div>
+
+
+          <!-- Feature -->
+
+          <div class="bg-white border border-slate-200 rounded-2xl p-7 hover:-translate-y-1 hover:shadow-xl transition">
+
+            <div class="w-12 h-12 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center mb-6">
+
+              💳
+
+            </div>
+
+            <h3 class="text-xl font-bold">
+              Digital Card
+            </h3>
+
+            <p class="mt-3 text-slate-600 leading-relaxed">
+              Manage your virtual card and keep your spending
+              organized.
+            </p>
+
+          </div>
+
+
+          <!-- Feature -->
+
+          <div class="bg-white border border-slate-200 rounded-2xl p-7 hover:-translate-y-1 hover:shadow-xl transition">
+
+            <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center mb-6">
+
+              📊
+
+            </div>
+
+            <h3 class="text-xl font-bold">
+              Track Spending
+            </h3>
+
+            <p class="mt-3 text-slate-600 leading-relaxed">
+              Keep track of your transactions and understand
+              where your money goes.
+            </p>
+
+          </div>
+
+
+          <!-- Feature -->
+
+          <div class="bg-white border border-slate-200 rounded-2xl p-7 hover:-translate-y-1 hover:shadow-xl transition">
+
+            <div class="w-12 h-12 rounded-xl bg-green-50 text-green-600 flex items-center justify-center mb-6">
+
+              🔔
+
+            </div>
+
+            <h3 class="text-xl font-bold">
+              Notifications
+            </h3>
+
+            <p class="mt-3 text-slate-600 leading-relaxed">
+              Stay informed about your account activity with
+              helpful notifications.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         HOW IT WORKS
+    ========================== -->
+
+    <section id="how-it-works" class="py-24 bg-slate-950 text-white">
+
+      <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+        <div class="text-center max-w-2xl mx-auto">
+
+          <p class="text-blue-400 font-bold uppercase tracking-wider text-sm">
+            How it works
+          </p>
+
+          <h2 class="mt-3 text-4xl sm:text-5xl font-extrabold">
+            Start banking in three simple steps.
+          </h2>
+
+        </div>
+
+
+        <div class="grid md:grid-cols-3 gap-8 mt-16">
+
+
+          <div class="relative">
+
+            <div class="text-6xl font-black text-white/10">
+              01
+            </div>
+
+            <h3 class="text-2xl font-bold mt-3">
+              Create your account
+            </h3>
+
+            <p class="mt-4 text-slate-400 leading-relaxed">
+              Sign up using your basic information and create
+              your demo banking profile.
+            </p>
+
+          </div>
+
+
+          <div class="relative">
+
+            <div class="text-6xl font-black text-white/10">
+              02
+            </div>
+
+            <h3 class="text-2xl font-bold mt-3">
+              Manage your money
+            </h3>
+
+            <p class="mt-4 text-slate-400 leading-relaxed">
+              View your balance, make simulated transfers and
+              manage your transactions.
+            </p>
+
+          </div>
+
+
+          <div class="relative">
+
+            <div class="text-6xl font-black text-white/10">
+              03
+            </div>
+
+            <h3 class="text-2xl font-bold mt-3">
+              Track everything
+            </h3>
+
+            <p class="mt-4 text-slate-400 leading-relaxed">
+              Review your transaction history and monitor your
+              account activity from your dashboard.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SECURITY
+    ========================== -->
+
+    <section id="security" class="py-24">
+
+      <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+        <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+
+          <div>
+
+            <p class="text-blue-600 font-bold uppercase tracking-wider text-sm">
+              Security
+            </p>
+
+            <h2 class="mt-3 text-4xl sm:text-5xl font-extrabold text-slate-950">
+              Designed with security in mind.
+            </h2>
+
+            <p class="mt-6 text-lg text-slate-600 leading-relaxed">
+              NovaBank's demo experience is designed to demonstrate
+              how a modern financial platform can present security,
+              transparency and account controls.
+            </p>
+
+
+            <div class="mt-8 space-y-5">
+
+              <div class="flex gap-4">
+
+                <div class="w-10 h-10 shrink-0 rounded-xl bg-blue-50 flex items-center justify-center">
+                  🔐
+                </div>
+
+                <div>
+
+                  <h3 class="font-bold">
+                    Protected experience
+                  </h3>
+
+                  <p class="text-slate-600 text-sm mt-1">
+                    Clear authentication and account-management
+                    interfaces.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div class="flex gap-4">
+
+                <div class="w-10 h-10 shrink-0 rounded-xl bg-blue-50 flex items-center justify-center">
+                  🛡️
+                </div>
+
+                <div>
+
+                  <h3 class="font-bold">
+                    Account controls
+                  </h3>
+
+                  <p class="text-slate-600 text-sm mt-1">
+                    Users can manage their account settings and
+                    preferences.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div class="flex gap-4">
+
+                <div class="w-10 h-10 shrink-0 rounded-xl bg-blue-50 flex items-center justify-center">
+                  📱
+                </div>
+
+                <div>
+
+                  <h3 class="font-bold">
+                    Mobile friendly
+                  </h3>
+
+                  <p class="text-slate-600 text-sm mt-1">
+                    Designed to work comfortably on mobile devices.
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- Security visual -->
+
+          <div class="bg-gradient-to-br from-blue-700 to-cyan-500 rounded-3xl p-8 sm:p-12 text-white">
+
+            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-7 border border-white/20">
+
+              <div class="flex items-center justify-between">
+
+                <div>
+
+                  <p class="text-sm text-white/70">
+                    Security status
+                  </p>
+
+                  <h3 class="text-2xl font-bold mt-1">
+                    Protected
+                  </h3>
+
+                </div>
+
+                <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center text-xl">
+                  ✓
+                </div>
+
+              </div>
+
+
+              <div class="mt-8 space-y-4">
+
+                <div class="flex justify-between items-center">
+
+                  <span class="text-white/80">
+                    Account protection
+                  </span>
+
+                  <span class="font-bold">
+                    Active
+                  </span>
+
+                </div>
+
+                <div class="h-px bg-white/20"></div>
+
+                <div class="flex justify-between items-center">
+
+                  <span class="text-white/80">
+                    Notifications
+                  </span>
+
+                  <span class="font-bold">
+                    Enabled
+                  </span>
+
+                </div>
+
+                <div class="h-px bg-white/20"></div>
+
+                <div class="flex justify-between items-center">
+
+                  <span class="text-white/80">
+                    Demo environment
+                  </span>
+
+                  <span class="font-bold">
+                    Active
+                  </span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CTA
+    ========================== -->
+
+    <section id="about" class="py-24">
+
+      <div class="max-w-6xl mx-auto px-5 lg:px-8">
+
+        <div class="rounded-3xl bg-blue-600 px-7 py-14 sm:px-14 text-center text-white">
+
+          <h2 class="text-4xl sm:text-5xl font-extrabold">
+            Take control of your banking experience.
+          </h2>
+
+          <p class="mt-5 text-blue-100 text-lg max-w-2xl mx-auto">
+            Create your NovaBank demo account and explore a
+            modern digital banking experience.
+          </p>
+
+          <a href="register.html"
+             class="inline-block mt-8 px-8 py-4 rounded-xl bg-white text-blue-700 font-bold hover:bg-blue-50 transition">
+
+            Get Started
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer class="bg-slate-950 text-white">
+
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 py-14">
+
+      <div class="grid md:grid-cols-4 gap-10">
+
+
+        <div class="md:col-span-2">
+
+          <div class="flex items-center gap-2">
+
+            <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center font-bold text-xl">
+              N
+            </div>
+
+            <span class="text-xl font-bold">
+              NovaBank
+            </span>
+
+          </div>
+
+          <p class="mt-5 text-slate-400 max-w-md leading-relaxed">
+            A fictional digital banking experience created for
+            learning and portfolio demonstration.
+          </p>
+
+        </div>
+
+
+        <div>
+
+          <h3 class="font-bold mb-4">
+            Product
+          </h3>
+
+          <div class="space-y-3 text-slate-400 text-sm">
+
+            <a href="#features" class="block hover:text-white">
+              Features
+            </a>
+
+            <a href="#security" class="block hover:text-white">
+              Security
+            </a>
+
+            <a href="#how-it-works" class="block hover:text-white">
+              How it works
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <h3 class="font-bold mb-4">
+            Account
+          </h3>
+
+          <div class="space-y-3 text-slate-400 text-sm">
+
+            <a href="login.html" class="block hover:text-white">
+              Login
+            </a>
+
+            <a href="register.html" class="block hover:text-white">
+              Register
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="mt-12 pt-7 border-t border-slate-800 flex flex-col sm:flex-row justify-between gap-4 text-sm text-slate-500">
+
+        <p>
+          © 2026 NovaBank. Demo project.
+        </p>
+
+        <p>
+          This is not a real banking service.
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       MOBILE MENU JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+
+      mobileMenu.classList.toggle("hidden");
+
+    });
+
+
+    // Close mobile menu after clicking a link
+
+    const mobileLinks = mobileMenu.querySelectorAll("a");
+
+    mobileLinks.forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        mobileMenu.classList.add("hidden");
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>

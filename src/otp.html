@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reen Bank - OTP Verification</title>
+
+    <link rel="stylesheet" href="/dist/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body
+    class="bg-[url('/src/assets/images/register.png')] bg-cover bg-center bg-fixed min-h-screen"
+  >
+    <main
+      class="min-h-screen w-full flex items-center px-5 sm:px-8 lg:px-12 2xl:px-16 py-10"
+    >
+      <!-- Full-width two-column layout (no max-width cap) -->
+      <div class="w-full grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+        <!-- ============ LEFT SIDE ============ -->
+        <section class="text-gray-900">
+          <!-- Logo -->
+          <div class="mb-10 lg:mb-20">
+            <img
+              src="/src/assets/logos/logo.png"
+              alt="Reen Bank Logo"
+              class="w-50 h-50 md:w-40 md:h-40 2xl:w-52 2xl:h-52 object-contain"
+            />
+          </div>
+
+          <!-- Text -->
+          <div>
+            <h2 class="text-2xl 2xl:text-3xl font-semibold text-green-500 mb-3">
+              Reen Bank
+            </h2>
+
+            <h1
+              class="text-5xl md:text-6xl 2xl:text-8xl font-bold leading-tight mb-6"
+            >
+              Experience <br />hassle-free banking
+            </h1>
+
+            <p
+              class="text-gray-600 text-xl 2xl:text-3xl max-w-2xl 2xl:max-w-3xl leading-relaxed"
+            >
+              Experience simple, secure, and stress-free banking. Say goodbye to
+              long queues and complex procedures and hello to hassle-free
+              banking with Reen Bank.
+            </p>
+          </div>
+
+          <!-- Socials -->
+          <div class="flex gap-4 mt-14 lg:mt-28">
+            <a
+              href="#"
+              class="bg-green-500 text-white w-11 h-11 rounded-full flex items-center justify-center text-lg"
+            >
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a
+              href="#"
+              class="bg-green-500 text-white w-11 h-11 rounded-full flex items-center justify-center text-lg"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a
+              href="#"
+              class="bg-green-500 text-white w-11 h-11 rounded-full flex items-center justify-center text-lg"
+            >
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+          </div>
+        </section>
+
+        <!-- ============ OTP CARD ============ -->
+        <section class="w-full">
+          <div
+            class="w-full max-w-2xl 2xl:max-w-3xl mx-auto lg:ml-auto lg:mr-0 bg-white rounded-3xl px-8 md:px-14 py-14 shadow-lg"
+          >
+            <h1
+              class="text-4xl 2xl:text-5xl font-semibold text-green-500 mb-10"
+            >
+              Email Verification
+            </h1>
+
+            <p class="text-gray-500 text-base 2xl:text-lg mb-6">
+              A 6-digit code has been generated for your registration.
+            </p>
+
+            <!-- OTP boxes -->
+            <div class="flex justify-between gap-2 md:gap-3 mb-6">
+              <input
+                type="text"
+                maxlength="1"
+                inputmode="numeric"
+                class="otp-input w-11 h-14 md:w-16 md:h-16 2xl:w-20 2xl:h-20 border border-gray-400 rounded-xl text-center text-2xl font-semibold outline-none focus:border-green-500 focus:ring-2 focus:ring-green-100"
+              />
+              <input
+                type="text"
+                maxlength="1"
+                inputmode="numeric"
+                class="otp-input w-11 h-14 md:w-16 md:h-16 2xl:w-20 2xl:h-20 border border-gray-400 rounded-xl text-center text-2xl font-semibold outline-none focus:border-green-500 focus:ring-2 focus:ring-green-100"
+              />
+              <input
+                type="text"
+                maxlength="1"
+                inputmode="numeric"
+                class="otp-input w-11 h-14 md:w-16 md:h-16 2xl:w-20 2xl:h-20 border border-gray-400 rounded-xl text-center text-2xl font-semibold outline-none focus:border-green-500 focus:ring-2 focus:ring-green-100"
+              />
+              <input
+                type="text"
+                maxlength="1"
+                inputmode="numeric"
+                class="otp-input w-11 h-14 md:w-16 md:h-16 2xl:w-20 2xl:h-20 border border-gray-400 rounded-xl text-center text-2xl font-semibold outline-none focus:border-green-500 focus:ring-2 focus:ring-green-100"
+              />
+              <input
+                type="text"
+                maxlength="1"
+                inputmode="numeric"
+                class="otp-input w-11 h-14 md:w-16 md:h-16 2xl:w-20 2xl:h-20 border border-gray-400 rounded-xl text-center text-2xl font-semibold outline-none focus:border-green-500 focus:ring-2 focus:ring-green-100"
+              />
+              <input
+                type="text"
+                maxlength="1"
+                inputmode="numeric"
+                class="otp-input w-11 h-14 md:w-16 md:h-16 2xl:w-20 2xl:h-20 border border-gray-400 rounded-xl text-center text-2xl font-semibold outline-none focus:border-green-500 focus:ring-2 focus:ring-green-100"
+              />
+            </div>
+
+            <!-- Inline error (incomplete / incorrect code) -->
+            <p
+              id="otpError"
+              class="hidden text-red-500 text-base 2xl:text-lg font-semibold mb-4"
+            ></p>
+
+            <!-- Timer -->
+            <p
+              id="timer"
+              class="text-green-500 text-base 2xl:text-lg font-semibold mb-6"
+            >
+              0:30 remaining
+            </p>
+
+            <!-- Verify -->
+            <button
+              id="verifyBtn"
+              type="button"
+              class="w-full h-14 2xl:h-16 bg-green-500 hover:bg-green-600 text-white font-semibold text-xl rounded-xl transition"
+            >
+              Verify Email
+            </button>
+
+            <!-- Resend -->
+            <p class="text-base 2xl:text-lg text-gray-500 mt-6">
+              Didn't receive the code?
+              <button
+                id="resendBtn"
+                type="button"
+                class="text-green-500 font-semibold ml-1"
+              >
+                Resend
+              </button>
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- ==================== POPUPS ==================== -->
+
+    <!-- Success -->
+    <div
+      id="successPopup"
+      class="hidden fixed inset-0 bg-black/90 items-center justify-center z-50 px-5"
+    >
+      <div
+        class="bg-white w-full max-w-[700px] min-h-[450px] rounded-[40px] flex flex-col items-center justify-center px-8 shadow-2xl"
+      >
+        <div
+          class="w-24 h-24 rounded-full bg-green-500 flex items-center justify-center mb-10"
+        >
+          <i class="fa-solid fa-check text-white text-5xl"></i>
+        </div>
+
+        <h2
+          class="text-3xl md:text-4xl font-semibold text-gray-800 text-center mb-14"
+        >
+          Your account has been
+          <span class="text-green-500">created Successfully!</span>
+        </h2>
+
+        <button
+          id="dashboardBtn"
+          type="button"
+          class="w-full max-w-[600px] h-[60px] bg-green-500 hover:bg-green-600 text-white text-xl font-semibold rounded-xl transition"
+        >
+          Go to Dashboard
+        </button>
+      </div>
+    </div>
+
+    <!-- Verifying -->
+    <div
+      id="loadingPopup"
+      class="hidden fixed inset-0 bg-black/70 items-center justify-center z-[100] px-5"
+    >
+      <div
+        class="bg-white rounded-3xl w-full max-w-[400px] py-12 px-8 flex flex-col items-center justify-center shadow-2xl"
+      >
+        <div
+          class="w-16 h-16 border-4 border-gray-200 border-t-green-500 rounded-full animate-spin mb-6"
+        ></div>
+        <h2 class="text-xl font-semibold text-gray-800">Verifying OTP...</h2>
+        <p class="text-base text-gray-500 mt-2">Please wait</p>
+      </div>
+    </div>
+
+    <!-- Error -->
+    <div
+      id="errorPopup"
+      class="hidden fixed inset-0 bg-black/70 items-center justify-center z-[100] px-5"
+    >
+      <div
+        class="bg-white rounded-3xl w-full max-w-[400px] py-10 px-8 flex flex-col items-center justify-center shadow-2xl"
+      >
+        <div
+          class="w-20 h-20 rounded-full bg-red-100 flex items-center justify-center mb-5"
+        >
+          <div
+            class="w-12 h-12 rounded-full bg-red-500 text-white flex items-center justify-center"
+          >
+            <i class="fa-solid fa-xmark text-2xl"></i>
+          </div>
+        </div>
+
+        <h2
+          id="errorTitle"
+          class="text-2xl font-semibold text-gray-800 text-center"
+        >
+          Incorrect OTP
+        </h2>
+        <p id="errorMessage" class="text-base text-gray-500 text-center mt-2">
+          The code you entered is incorrect. Please try again.
+        </p>
+
+        <!-- Shown only for registration errors -->
+        <button
+          id="goRegisterBtn"
+          type="button"
+          class="hidden w-full h-14 mt-7 bg-green-500 hover:bg-green-600 text-white text-lg font-semibold rounded-xl transition"
+        >
+          Go to Register
+        </button>
+      </div>
+    </div>
+
+    <!-- Resend (new code sent) -->
+    <div
+      id="resendPopup"
+      class="hidden fixed inset-0 bg-black/70 items-center justify-center z-[100] px-5"
+    >
+      <div
+        class="bg-white rounded-3xl w-full max-w-[400px] py-10 px-8 flex flex-col items-center justify-center shadow-2xl"
+      >
+        <div
+          class="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mb-5"
+        >
+          <div
+            class="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center"
+          >
+            <i class="fa-solid fa-check text-2xl"></i>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-semibold text-gray-800 text-center">
+          New Code Sent
+        </h2>
+        <p class="text-base text-gray-500 text-center mt-2">
+          A new verification code has been sent.
+        </p>
+      </div>
+    </div>
+
+    <!-- Expired -->
+    <div
+      id="expiredPopup"
+      class="hidden fixed inset-0 bg-black/70 items-center justify-center z-[100] px-5"
+    >
+      <div
+        class="bg-white rounded-3xl w-full max-w-[400px] py-10 px-8 flex flex-col items-center justify-center shadow-2xl"
+      >
+        <div
+          class="w-20 h-20 rounded-full bg-red-100 flex items-center justify-center mb-5"
+        >
+          <div
+            class="w-12 h-12 rounded-full bg-red-500 text-white flex items-center justify-center"
+          >
+            <i class="fa-solid fa-xmark text-2xl"></i>
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-semibold text-gray-800">Code Expired</h2>
+        <p class="text-base text-gray-500 text-center mt-2 mb-7">
+          Your OTP has expired. Please request a new code to continue.
+        </p>
+
+        <button
+          id="getOtpAgainBtn"
+          type="button"
+          class="w-full h-14 bg-green-500 hover:bg-green-600 text-white text-lg font-semibold rounded-xl transition"
+        >
+          Get OTP Again
+        </button>
+      </div>
+    </div>
+
+    <script src="otp.js"></script>
+  </body>
+</html>
