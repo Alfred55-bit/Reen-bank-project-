@@ -1,1109 +1,519 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>NovaBank — Banking Made Simple</title>
-
-  <!-- Tailwind CSS -->
-<link rel="stylesheet" href="/dist/output.css" />
-  <!-- Tailwind Configuration -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: "#07152F",
-            primary: "#2563EB",
-            cyan: "#06B6D4"
-          }
-        }
-      }
-    }
-  </script>
-</head>
-
-<body class="bg-slate-50 text-slate-900">
-
-  <!-- =========================
-       NAVBAR
-  ========================== -->
-
-  <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
-
-    <nav class="max-w-7xl mx-auto px-5 lg:px-8 h-20 flex items-center justify-between">
-
-      <!-- Logo -->
-      <a href="#" class="flex items-center gap-2">
-
-        <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white font-bold text-xl">
-          N
-        </div>
-
-        <span class="text-xl font-bold text-slate-900">
-          Nova<span class="text-blue-600">Bank</span>
-        </span>
-
-      </a>
-
-
-      <!-- Desktop Navigation -->
-      <div class="hidden md:flex items-center gap-8">
-
-        <a href="#features"
-           class="text-sm font-medium text-slate-600 hover:text-blue-600 transition">
-          Features
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reen Bank</title>
+    <link rel="stylesheet" href="./output.css" />
+    <!--
+  LAYOUT RULE USED EVERYWHERE:
+  Container = "w-full px-5 sm:px-8 lg:px-12 2xl:px-16"
+  (wide, so content fills the screen instead of bunching in the middle)
+-->
+  </head>
+  <body class="bg-white text-slate-800 antialiased">
+    <!-- ==================== HERO ==================== -->
+    <header class="bg-[#D3F3E6] min-h-screen flex flex-col">
+      <!-- NAVBAR -->
+      <nav
+        class="relative w-full w-full px-5 sm:px-8 lg:px-12 2xl:px-16 py-6 flex items-center justify-between"
+      >
+        <a href="index.html" class="block">
+          <img
+            src="/src/assets/logos/logo.png"
+            alt="Reen Bank Logo"
+            class="w-32 md:w-40"
+          />
         </a>
 
-        <a href="#security"
-           class="text-sm font-medium text-slate-600 hover:text-blue-600 transition">
-          Security
-        </a>
-
-        <a href="#how-it-works"
-           class="text-sm font-medium text-slate-600 hover:text-blue-600 transition">
-          How it works
-        </a>
-
-        <a href="#about"
-           class="text-sm font-medium text-slate-600 hover:text-blue-600 transition">
-          About
-        </a>
-
-      </div>
-
-
-      <!-- Desktop Buttons -->
-      <div class="hidden md:flex items-center gap-3">
-
-        <a href="login.html"
-           class="px-5 py-2.5 rounded-xl font-semibold text-slate-700 hover:bg-slate-100 transition">
-          Login
-        </a>
-
-        <a href="register.html"
-           class="px-5 py-2.5 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition shadow-lg shadow-blue-600/20">
-          Get Started
-        </a>
-
-      </div>
-
-
-      <!-- Mobile Menu Button -->
-      <button id="menuBtn"
-              class="md:hidden p-2 rounded-lg hover:bg-slate-100">
-
-        <svg class="w-6 h-6"
-             fill="none"
-             stroke="currentColor"
-             viewBox="0 0 24 24">
-
-          <path stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16">
-          </path>
-
-        </svg>
-
-      </button>
-
-    </nav>
-
-
-    <!-- Mobile Menu -->
-    <div id="mobileMenu"
-         class="hidden md:hidden bg-white border-t border-slate-200">
-
-      <div class="px-5 py-5 space-y-3">
-
-        <a href="#features"
-           class="block py-2 text-slate-600">
-          Features
-        </a>
-
-        <a href="#security"
-           class="block py-2 text-slate-600">
-          Security
-        </a>
-
-        <a href="#how-it-works"
-           class="block py-2 text-slate-600">
-          How it works
-        </a>
-
-        <a href="#about"
-           class="block py-2 text-slate-600">
-          About
-        </a>
-
-        <div class="pt-3 border-t border-slate-200 flex gap-3">
-
-          <a href="login.html"
-             class="flex-1 text-center py-3 rounded-xl bg-slate-100 font-semibold">
+        <!-- Desktop links -->
+        <div class="hidden md:flex items-center gap-10 text-lg">
+          <a
+            href="#about"
+            class="text-slate-700 hover:text-green-500 transition"
+            >About</a
+          >
+          <a
+            href="#contact"
+            class="text-slate-700 hover:text-green-500 transition"
+            >Contact us</a
+          >
+          <a
+            href="login1.html"
+            class="border border-green-500 text-green-500 px-8 py-2.5 rounded-md hover:bg-green-500 hover:text-white transition"
+          >
             Login
           </a>
-
-          <a href="register.html"
-             class="flex-1 text-center py-3 rounded-xl bg-blue-600 text-white font-semibold">
-            Get Started
-          </a>
-
         </div>
 
-      </div>
-
-    </div>
-
-  </header>
-
-
-  <!-- =========================
-       HERO
-  ========================== -->
-
-  <main>
-
-    <section class="pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
-
-      <div class="max-w-7xl mx-auto px-5 lg:px-8">
-
-        <div class="grid lg:grid-cols-2 gap-14 items-center">
-
-
-          <!-- Hero Text -->
-
-          <div>
-
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-blue-700 text-sm font-semibold mb-6">
-
-              <span class="w-2 h-2 rounded-full bg-blue-600"></span>
-
-              Banking made simpler
-
-            </div>
-
-
-            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-950 leading-[1.05]">
-
-              Your money.
-              <span class="text-blue-600">
-                Your control.
-              </span>
-
-            </h1>
-
-
-            <p class="mt-6 text-lg text-slate-600 leading-relaxed max-w-xl">
-
-              Manage your money, make transfers, track transactions and
-              manage your digital card — all from one simple banking
-              experience.
-
-            </p>
-
-
-            <!-- Buttons -->
-
-            <div class="mt-8 flex flex-col sm:flex-row gap-4">
-
-              <a href="register.html"
-                 class="inline-flex justify-center items-center px-7 py-4 rounded-xl bg-blue-600 text-white font-bold hover:bg-blue-700 transition shadow-xl shadow-blue-600/20">
-
-                Create Free Account
-
-                <svg class="w-5 h-5 ml-2"
-                     fill="none"
-                     stroke="currentColor"
-                     viewBox="0 0 24 24">
-
-                  <path stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M13 7l5 5m0 0l-5 5m5-5H6">
-                  </path>
-
-                </svg>
-
-              </a>
-
-
-              <a href="login.html"
-                 class="inline-flex justify-center items-center px-7 py-4 rounded-xl bg-white border border-slate-300 text-slate-800 font-bold hover:bg-slate-100 transition">
-
-                Login to Account
-
-              </a>
-
-            </div>
-
-
-            <!-- Small trust text -->
-
-            <div class="mt-8 flex flex-wrap gap-6 text-sm text-slate-500">
-
-              <div class="flex items-center gap-2">
-
-                <span class="text-green-600">✓</span>
-
-                No hidden fees
-
-              </div>
-
-              <div class="flex items-center gap-2">
-
-                <span class="text-green-600">✓</span>
-
-                Fast transfers
-
-              </div>
-
-              <div class="flex items-center gap-2">
-
-                <span class="text-green-600">✓</span>
-
-                Secure platform
-
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <!-- Hero Banking Card -->
-
-          <div class="relative">
-
-            <!-- Decorative circles -->
-
-            <div class="absolute -top-10 -right-10 w-40 h-40 bg-blue-200 rounded-full blur-3xl opacity-60"></div>
-
-            <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-cyan-200 rounded-full blur-3xl opacity-60"></div>
-
-
-            <!-- Dashboard Card -->
-
-            <div class="relative bg-white rounded-3xl border border-slate-200 shadow-2xl p-5 sm:p-7">
-
-              <!-- Dashboard header -->
-
-              <div class="flex items-center justify-between mb-7">
-
-                <div>
-
-                  <p class="text-sm text-slate-500">
-                    Available balance
-                  </p>
-
-                  <h2 class="text-3xl font-bold text-slate-950 mt-1">
-                    ₦2,845,750.00
-                  </h2>
-
-                </div>
-
-
-                <div class="w-11 h-11 rounded-xl bg-blue-50 flex items-center justify-center">
-
-                  <svg class="w-6 h-6 text-blue-600"
-                       fill="none"
-                       stroke="currentColor"
-                       viewBox="0 0 24 24">
-
-                    <path stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
-                    </path>
-
-                  </svg>
-
-                </div>
-
-              </div>
-
-
-              <!-- Virtual card -->
-
-              <div class="rounded-2xl p-6 bg-gradient-to-br from-blue-700 via-blue-600 to-cyan-500 text-white shadow-xl">
-
-                <div class="flex justify-between items-start">
-
-                  <div>
-
-                    <p class="text-xs opacity-80">
-                      NOVABANK
-                    </p>
-
-                    <p class="text-sm mt-1 opacity-80">
-                      DEMO CARD
-                    </p>
-
-                  </div>
-
-
-                  <div class="text-xl font-bold">
-                    VISA
-                  </div>
-
-                </div>
-
-
-                <div class="mt-10 text-xl sm:text-2xl tracking-widest font-medium">
-
-                  •••• •••• •••• 4821
-
-                </div>
-
-
-                <div class="mt-6 flex justify-between">
-
-                  <div>
-
-                    <p class="text-[10px] opacity-70">
-                      CARD HOLDER
-                    </p>
-
-                    <p class="text-sm font-semibold">
-                      ALEX JOHNSON
-                    </p>
-
-                  </div>
-
-
-                  <div>
-
-                    <p class="text-[10px] opacity-70">
-                      EXPIRES
-                    </p>
-
-                    <p class="text-sm font-semibold">
-                      12/29
-                    </p>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-
-              <!-- Recent transactions -->
-
-              <div class="mt-7">
-
-                <div class="flex items-center justify-between mb-4">
-
-                  <h3 class="font-bold text-slate-900">
-                    Recent transactions
-                  </h3>
-
-                  <span class="text-sm text-blue-600 font-semibold">
-                    View all
-                  </span>
-
-                </div>
-
-
-                <!-- Transaction -->
-
-                <div class="flex items-center justify-between py-3 border-b border-slate-100">
-
-                  <div class="flex items-center gap-3">
-
-                    <div class="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center text-green-600">
-
-                      ↓
-
-                    </div>
-
-                    <div>
-
-                      <p class="font-semibold text-sm">
-                        Salary
-                      </p>
-
-                      <p class="text-xs text-slate-500">
-                        Today, 9:32 AM
-                      </p>
-
-                    </div>
-
-                  </div>
-
-                  <p class="font-bold text-green-600">
-                    +₦450,000
-                  </p>
-
-                </div>
-
-
-                <!-- Transaction -->
-
-                <div class="flex items-center justify-between py-3">
-
-                  <div class="flex items-center gap-3">
-
-                    <div class="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center text-red-600">
-
-                      ↑
-
-                    </div>
-
-                    <div>
-
-                      <p class="font-semibold text-sm">
-                        Electricity
-                      </p>
-
-                      <p class="text-xs text-slate-500">
-                        Yesterday
-                      </p>
-
-                    </div>
-
-                  </div>
-
-                  <p class="font-bold text-slate-900">
-                    -₦35,500
-                  </p>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         STATS
-    ========================== -->
-
-    <section class="py-12 bg-white border-y border-slate-200">
-
-      <div class="max-w-7xl mx-auto px-5 lg:px-8">
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-
-          <div>
-
-            <p class="text-3xl font-extrabold text-slate-950">
-              24/7
-            </p>
-
-            <p class="text-sm text-slate-500 mt-1">
-              Account access
-            </p>
-
-          </div>
-
-
-          <div>
-
-            <p class="text-3xl font-extrabold text-slate-950">
-              Fast
-            </p>
-
-            <p class="text-sm text-slate-500 mt-1">
-              Transfers
-            </p>
-
-          </div>
-
-
-          <div>
-
-            <p class="text-3xl font-extrabold text-slate-950">
-              Secure
-            </p>
-
-            <p class="text-sm text-slate-500 mt-1">
-              Platform
-            </p>
-
-          </div>
-
-
-          <div>
-
-            <p class="text-3xl font-extrabold text-slate-950">
-              Simple
-            </p>
-
-            <p class="text-sm text-slate-500 mt-1">
-              Experience
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         FEATURES
-    ========================== -->
-
-    <section id="features" class="py-24">
-
-      <div class="max-w-7xl mx-auto px-5 lg:px-8">
-
-        <div class="max-w-2xl mb-14">
-
-          <p class="text-blue-600 font-bold uppercase tracking-wider text-sm">
-            Features
-          </p>
-
-          <h2 class="mt-3 text-4xl sm:text-5xl font-extrabold text-slate-950">
-            Everything you need to manage your money.
-          </h2>
-
-          <p class="mt-5 text-lg text-slate-600">
-            A simple banking experience designed around the things
-            you use every day.
-          </p>
-
-        </div>
-
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-
-
-          <!-- Feature -->
-
-          <div class="bg-white border border-slate-200 rounded-2xl p-7 hover:-translate-y-1 hover:shadow-xl transition">
-
-            <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6">
-
-              💸
-
-            </div>
-
-            <h3 class="text-xl font-bold">
-              Easy Transfers
-            </h3>
-
-            <p class="mt-3 text-slate-600 leading-relaxed">
-              Send money quickly using a simple and intuitive
-              transfer experience.
-            </p>
-
-          </div>
-
-
-          <!-- Feature -->
-
-          <div class="bg-white border border-slate-200 rounded-2xl p-7 hover:-translate-y-1 hover:shadow-xl transition">
-
-            <div class="w-12 h-12 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center mb-6">
-
-              💳
-
-            </div>
-
-            <h3 class="text-xl font-bold">
-              Digital Card
-            </h3>
-
-            <p class="mt-3 text-slate-600 leading-relaxed">
-              Manage your virtual card and keep your spending
-              organized.
-            </p>
-
-          </div>
-
-
-          <!-- Feature -->
-
-          <div class="bg-white border border-slate-200 rounded-2xl p-7 hover:-translate-y-1 hover:shadow-xl transition">
-
-            <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center mb-6">
-
-              📊
-
-            </div>
-
-            <h3 class="text-xl font-bold">
-              Track Spending
-            </h3>
-
-            <p class="mt-3 text-slate-600 leading-relaxed">
-              Keep track of your transactions and understand
-              where your money goes.
-            </p>
-
-          </div>
-
-
-          <!-- Feature -->
-
-          <div class="bg-white border border-slate-200 rounded-2xl p-7 hover:-translate-y-1 hover:shadow-xl transition">
-
-            <div class="w-12 h-12 rounded-xl bg-green-50 text-green-600 flex items-center justify-center mb-6">
-
-              🔔
-
-            </div>
-
-            <h3 class="text-xl font-bold">
-              Notifications
-            </h3>
-
-            <p class="mt-3 text-slate-600 leading-relaxed">
-              Stay informed about your account activity with
-              helpful notifications.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         HOW IT WORKS
-    ========================== -->
-
-    <section id="how-it-works" class="py-24 bg-slate-950 text-white">
-
-      <div class="max-w-7xl mx-auto px-5 lg:px-8">
-
-        <div class="text-center max-w-2xl mx-auto">
-
-          <p class="text-blue-400 font-bold uppercase tracking-wider text-sm">
-            How it works
-          </p>
-
-          <h2 class="mt-3 text-4xl sm:text-5xl font-extrabold">
-            Start banking in three simple steps.
-          </h2>
-
-        </div>
-
-
-        <div class="grid md:grid-cols-3 gap-8 mt-16">
-
-
-          <div class="relative">
-
-            <div class="text-6xl font-black text-white/10">
-              01
-            </div>
-
-            <h3 class="text-2xl font-bold mt-3">
-              Create your account
-            </h3>
-
-            <p class="mt-4 text-slate-400 leading-relaxed">
-              Sign up using your basic information and create
-              your demo banking profile.
-            </p>
-
-          </div>
-
-
-          <div class="relative">
-
-            <div class="text-6xl font-black text-white/10">
-              02
-            </div>
-
-            <h3 class="text-2xl font-bold mt-3">
-              Manage your money
-            </h3>
-
-            <p class="mt-4 text-slate-400 leading-relaxed">
-              View your balance, make simulated transfers and
-              manage your transactions.
-            </p>
-
-          </div>
-
-
-          <div class="relative">
-
-            <div class="text-6xl font-black text-white/10">
-              03
-            </div>
-
-            <h3 class="text-2xl font-bold mt-3">
-              Track everything
-            </h3>
-
-            <p class="mt-4 text-slate-400 leading-relaxed">
-              Review your transaction history and monitor your
-              account activity from your dashboard.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         SECURITY
-    ========================== -->
-
-    <section id="security" class="py-24">
-
-      <div class="max-w-7xl mx-auto px-5 lg:px-8">
-
-        <div class="grid lg:grid-cols-2 gap-14 items-center">
-
-
-          <div>
-
-            <p class="text-blue-600 font-bold uppercase tracking-wider text-sm">
-              Security
-            </p>
-
-            <h2 class="mt-3 text-4xl sm:text-5xl font-extrabold text-slate-950">
-              Designed with security in mind.
-            </h2>
-
-            <p class="mt-6 text-lg text-slate-600 leading-relaxed">
-              NovaBank's demo experience is designed to demonstrate
-              how a modern financial platform can present security,
-              transparency and account controls.
-            </p>
-
-
-            <div class="mt-8 space-y-5">
-
-              <div class="flex gap-4">
-
-                <div class="w-10 h-10 shrink-0 rounded-xl bg-blue-50 flex items-center justify-center">
-                  🔐
-                </div>
-
-                <div>
-
-                  <h3 class="font-bold">
-                    Protected experience
-                  </h3>
-
-                  <p class="text-slate-600 text-sm mt-1">
-                    Clear authentication and account-management
-                    interfaces.
-                  </p>
-
-                </div>
-
-              </div>
-
-
-              <div class="flex gap-4">
-
-                <div class="w-10 h-10 shrink-0 rounded-xl bg-blue-50 flex items-center justify-center">
-                  🛡️
-                </div>
-
-                <div>
-
-                  <h3 class="font-bold">
-                    Account controls
-                  </h3>
-
-                  <p class="text-slate-600 text-sm mt-1">
-                    Users can manage their account settings and
-                    preferences.
-                  </p>
-
-                </div>
-
-              </div>
-
-
-              <div class="flex gap-4">
-
-                <div class="w-10 h-10 shrink-0 rounded-xl bg-blue-50 flex items-center justify-center">
-                  📱
-                </div>
-
-                <div>
-
-                  <h3 class="font-bold">
-                    Mobile friendly
-                  </h3>
-
-                  <p class="text-slate-600 text-sm mt-1">
-                    Designed to work comfortably on mobile devices.
-                  </p>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <!-- Security visual -->
-
-          <div class="bg-gradient-to-br from-blue-700 to-cyan-500 rounded-3xl p-8 sm:p-12 text-white">
-
-            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-7 border border-white/20">
-
-              <div class="flex items-center justify-between">
-
-                <div>
-
-                  <p class="text-sm text-white/70">
-                    Security status
-                  </p>
-
-                  <h3 class="text-2xl font-bold mt-1">
-                    Protected
-                  </h3>
-
-                </div>
-
-                <div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center text-xl">
-                  ✓
-                </div>
-
-              </div>
-
-
-              <div class="mt-8 space-y-4">
-
-                <div class="flex justify-between items-center">
-
-                  <span class="text-white/80">
-                    Account protection
-                  </span>
-
-                  <span class="font-bold">
-                    Active
-                  </span>
-
-                </div>
-
-                <div class="h-px bg-white/20"></div>
-
-                <div class="flex justify-between items-center">
-
-                  <span class="text-white/80">
-                    Notifications
-                  </span>
-
-                  <span class="font-bold">
-                    Enabled
-                  </span>
-
-                </div>
-
-                <div class="h-px bg-white/20"></div>
-
-                <div class="flex justify-between items-center">
-
-                  <span class="text-white/80">
-                    Demo environment
-                  </span>
-
-                  <span class="font-bold">
-                    Active
-                  </span>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         CTA
-    ========================== -->
-
-    <section id="about" class="py-24">
-
-      <div class="max-w-6xl mx-auto px-5 lg:px-8">
-
-        <div class="rounded-3xl bg-blue-600 px-7 py-14 sm:px-14 text-center text-white">
-
-          <h2 class="text-4xl sm:text-5xl font-extrabold">
-            Take control of your banking experience.
-          </h2>
-
-          <p class="mt-5 text-blue-100 text-lg max-w-2xl mx-auto">
-            Create your NovaBank demo account and explore a
-            modern digital banking experience.
-          </p>
-
-          <a href="register.html"
-             class="inline-block mt-8 px-8 py-4 rounded-xl bg-white text-blue-700 font-bold hover:bg-blue-50 transition">
-
-            Get Started
-
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- =========================
-       FOOTER
-  ========================== -->
-
-  <footer class="bg-slate-950 text-white">
-
-    <div class="max-w-7xl mx-auto px-5 lg:px-8 py-14">
-
-      <div class="grid md:grid-cols-4 gap-10">
-
-
-        <div class="md:col-span-2">
-
-          <div class="flex items-center gap-2">
-
-            <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center font-bold text-xl">
-              N
-            </div>
-
-            <span class="text-xl font-bold">
-              NovaBank
-            </span>
-
-          </div>
-
-          <p class="mt-5 text-slate-400 max-w-md leading-relaxed">
-            A fictional digital banking experience created for
-            learning and portfolio demonstration.
-          </p>
-
-        </div>
-
-
-        <div>
-
-          <h3 class="font-bold mb-4">
-            Product
-          </h3>
-
-          <div class="space-y-3 text-slate-400 text-sm">
-
-            <a href="#features" class="block hover:text-white">
-              Features
-            </a>
-
-            <a href="#security" class="block hover:text-white">
-              Security
-            </a>
-
-            <a href="#how-it-works" class="block hover:text-white">
-              How it works
-            </a>
-
-          </div>
-
-        </div>
-
-
-        <div>
-
-          <h3 class="font-bold mb-4">
-            Account
-          </h3>
-
-          <div class="space-y-3 text-slate-400 text-sm">
-
-            <a href="login.html" class="block hover:text-white">
+        <!-- Mobile button -->
+        <button
+          id="menuBtn"
+          type="button"
+          class="md:hidden text-slate-700 text-4xl focus:outline-none"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+        >
+          ☰
+        </button>
+
+        <!-- Mobile dropdown -->
+        <div
+          id="mobileMenu"
+          class="hidden absolute top-20 left-5 right-5 sm:left-8 sm:right-8 z-50 bg-white rounded-lg shadow-lg p-6 md:hidden"
+        >
+          <div class="flex flex-col gap-5 text-lg">
+            <a
+              href="#about"
+              class="mobile-link text-slate-700 hover:text-green-500 transition"
+              >About</a
+            >
+            <a
+              href="#contact"
+              class="mobile-link text-slate-700 hover:text-green-500 transition"
+              >Contact us</a
+            >
+            <a
+              href="login1.html"
+              class="mobile-link border border-green-500 text-green-500 px-5 py-3 rounded-md text-center hover:bg-green-500 hover:text-white transition"
+            >
               Login
             </a>
+          </div>
+        </div>
+      </nav>
 
-            <a href="register.html" class="block hover:text-white">
-              Register
-            </a>
+      <!-- HERO CONTENT -->
+      <section
+        class="flex-1 flex items-center w-full w-full px-5 sm:px-8 lg:px-12 2xl:px-16 py-12 lg:py-20"
+      >
+        <div class="w-full grid lg:grid-cols-2 items-center gap-12 lg:gap-20">
+          <!-- Text -->
+          <div>
+            <p
+              class="text-green-500 font-bold text-2xl md:text-3xl 2xl:text-4xl"
+            >
+              Reen Bank
+            </p>
 
+            <h1
+              class="mt-4 text-5xl sm:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-tight text-slate-900"
+            >
+              Experience <br class="hidden sm:block" />hassle-free banking
+            </h1>
+
+            <p
+              class="mt-8 text-xl md:text-2xl 2xl:text-3xl leading-8 md:leading-9 2xl:leading-10 text-slate-800 max-w-2xl 2xl:max-w-3xl"
+            >
+              Experience simple, secure, and stress-free banking. Say goodbye to
+              long queues and complex procedures and hello to hassle-free
+              banking with Reen Bank.
+            </p>
+
+            <div class="mt-10 flex flex-wrap gap-4">
+              <a
+                href="register.html"
+                id="getStarted"
+                class="bg-green-500 text-white px-9 py-4 rounded-md text-lg font-medium hover:bg-green-600 transition flex items-center justify-center"
+              >
+                Get Started
+              </a>
+
+              <a
+                href="#services"
+                id="learnMore"
+                class="border border-green-500 text-green-500 px-9 py-4 rounded-md text-lg hover:bg-green-500 hover:text-white transition flex items-center justify-center gap-2"
+              >
+                <span>Learn More</span>
+                <span class="text-2xl font-bold">→</span>
+              </a>
+            </div>
           </div>
 
+          <!-- Card -->
+          <div class="flex justify-center lg:justify-end">
+            <img
+              src="/src/assets/images/Reen_Bank_Credit_Card_Mockup_v01 1.png"
+              alt="Reen Bank Credit Card"
+              id="bankCard"
+              class="w-full max-w-md md:max-w-xl lg:max-w-none lg:w-700px] xl:w-[640px] 2xl:w-[760px] animate-zoom"
+            />
+          </div>
         </div>
+      </section>
+    </header>
 
+    <!-- ==================== SERVICES ==================== -->
+    <section id="services" class="py-20 md:py-28 bg-white">
+      <div class="w-full px-5 sm:px-8 lg:px-12 2xl:px-16">
+        <h2
+          class="text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl font-bold text-slate-900 mb-14"
+        >
+          Services
+        </h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-14 gap-y-14">
+          <!-- Service 1 -->
+          <div class="flex gap-5">
+            <img
+              src="/src/assets/logos/savings 1.png"
+              alt="Savings account"
+              class="w-14 h-14 md:w-16 md:h-16 2xl:w-20 2xl:h-20 shrink-0"
+            />
+            <div>
+              <h3 class="text-green-500 font-bold text-2xl 2xl:text-3xl">
+                Savings accounts
+              </h3>
+              <p
+                class="mt-3 text-base md:text-xl leading-7 md:leading-8 text-slate-500"
+              >
+                Reen Bank could offer a variety of savings accounts with
+                different interest rates and terms, allowing customers to save
+                money and earn interest over time. These accounts could include
+                features like automatic transfers, overdraft protection, and
+                mobile banking access.
+              </p>
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="flex gap-5">
+            <img
+              src="/src/assets/logos/personal 1.png"
+              alt="Personal loans"
+              class="w-14 h-14 md:w-16 md:h-16 2xl:w-20 2xl:h-20 shrink-0"
+            />
+            <div>
+              <h3 class="text-green-500 font-bold text-2xl 2xl:text-3xl">
+                Personal loans
+              </h3>
+              <p
+                class="mt-3 text-base md:text-xl leading-7 md:leading-8 text-slate-500"
+              >
+                Reen Bank could offer personal loans for a variety of purposes,
+                such as debt consolidation, home improvements, or major
+                purchases. Customers could apply online and receive a decision
+                quickly.
+              </p>
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="flex gap-5">
+            <img
+              src="/src/assets/logos/credit-card 1.png"
+              alt="Credit cards"
+              class="w-14 h-14 md:w-16 md:h-16 2xl:w-20 2xl:h-20 shrink-0"
+            />
+            <div>
+              <h3 class="text-green-500 font-bold text-2xl 2xl:text-3xl">
+                Credit cards
+              </h3>
+              <p
+                class="mt-3 text-base md:text-xl leading-7 md:leading-8 text-slate-500"
+              >
+                Reen Bank could offer credit cards with different rewards
+                programs and benefits, such as cash back, travel rewards or low
+                interest rates.
+              </p>
+            </div>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="flex gap-5">
+            <img
+              src="/src/assets/logos/money 1.png"
+              alt="Investment services"
+              class="w-14 h-14 md:w-16 md:h-16 2xl:w-20 2xl:h-20 shrink-0"
+            />
+            <div>
+              <h3 class="text-green-500 font-bold text-2xl 2xl:text-3xl">
+                Investment services
+              </h3>
+              <p
+                class="mt-3 text-base md:text-xl leading-7 md:leading-8 text-slate-500"
+              >
+                Reen Bank could offer investment services for customers looking
+                to grow their wealth over time. These services could include
+                mutual funds, exchange traded funds and professional financial
+                advice.
+              </p>
+            </div>
+          </div>
+
+          <!-- Service 5 -->
+          <div class="flex gap-5">
+            <img
+              src="/src/assets/logos/bill 1.png"
+              alt="Online bill pay"
+              class="w-14 h-14 md:w-16 md:h-16 2xl:w-20 2xl:h-20 shrink-0"
+            />
+            <div>
+              <h3 class="text-green-500 font-bold text-2xl 2xl:text-3xl">
+                Online bill pay
+              </h3>
+              <p
+                class="mt-3 text-base md:text-xl leading-7 md:leading-8 text-slate-500"
+              >
+                Reen Bank could offer a convenient online bill pay service,
+                allowing customers to pay bills and manage expenses from their
+                computer or mobile device.
+              </p>
+            </div>
+          </div>
+
+          <!-- Service 6 -->
+          <div class="flex gap-5">
+            <img
+              src="/src/assets/logos/deal 1.png"
+              alt="Business banking"
+              class="w-14 h-14 md:w-16 md:h-16 2xl:w-20 2xl:h-20 shrink-0"
+            />
+            <div>
+              <h3 class="text-green-500 font-bold text-2xl 2xl:text-3xl">
+                Business banking
+              </h3>
+              <p
+                class="mt-3 text-base md:text-xl leading-7 md:leading-8 text-slate-500"
+              >
+                Reen Bank could offer a range of banking services for small and
+                medium-sized businesses, including checking accounts, business
+                loans and cash management tools.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
+    <!-- ==================== FAQ ==================== -->
+    <section class="bg-[#D3F3E6] py-20 md:py-28">
+      <div class="w-full px-5 sm:px-8 lg:px-12 2xl:px-16">
+        <div class="grid lg:grid-cols-2 gap-14 lg:gap-24">
+          <!-- Active FAQ -->
+          <div>
+            <h2
+              class="text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl font-bold mb-10"
+            >
+              FAQs
+            </h2>
 
-      <div class="mt-12 pt-7 border-t border-slate-800 flex flex-col sm:flex-row justify-between gap-4 text-sm text-slate-500">
+            <button
+              id="activeQuestion"
+              class="text-left text-green-500 font-bold text-2xl md:text-3xl 2xl:text-4xl underline mb-6 hover:text-green-600 transition"
+            >
+              How do I sign up for an account with Reen Bank?
+            </button>
 
-        <p>
-          © 2026 NovaBank. Demo project.
-        </p>
+            <p
+              id="activeAnswer"
+              class="text-lg md:text-xl 2xl:text-2xl text-slate-600 leading-8 max-w-xl 2xl:max-w-2xl"
+            >
+              You can sign up for an account with Reen Bank online by visiting
+              our website and filling out the online application form. Once your
+              application is approved, you will receive instructions for setting
+              up your account and accessing our online banking platform.
+            </p>
+          </div>
 
-        <p>
-          This is not a real banking service.
-        </p>
+          <!-- FAQ list -->
+          <div id="faqList" class="space-y-6 lg:pt-4">
+            <button
+              class="faq-item w-full text-left border-b border-slate-300 pb-5 flex justify-between items-center gap-4 text-lg md:text-xl"
+              data-question="What types of accounts does Reen Bank offer?"
+              data-answer="Reen Bank offers several fictional account options designed for this demonstration."
+            >
+              <span class="font-semibold"
+                >What types of accounts does Reen Bank offer?</span
+              >
+              <span class="text-2xl">→</span>
+            </button>
 
+            <button
+              class="faq-item w-full text-left border-b border-slate-300 pb-5 flex justify-between items-center gap-4 text-lg md:text-xl"
+              data-question="Is Reen Bank FDIC insured?"
+              data-answer="This is a fictional banking project and does not represent a real financial institution."
+            >
+              <span class="font-semibold">Is Reen Bank FDIC insured?</span>
+              <span class="text-2xl">→</span>
+            </button>
+
+            <button
+              class="faq-item w-full text-left border-b border-slate-300 pb-5 flex justify-between items-center gap-4 text-lg md:text-xl"
+              data-question="How can I access my Reen Bank account online?"
+              data-answer="Users can access their demo account through the login page."
+            >
+              <span class="font-semibold"
+                >How can I access my Reen Bank account online?</span
+              >
+              <span class="text-2xl">→</span>
+            </button>
+
+            <button
+              class="faq-item w-full text-left border-b border-slate-300 pb-5 flex justify-between items-center gap-4 text-lg md:text-xl"
+              data-question="What security measures does Reen Bank have?"
+              data-answer="The project will demonstrate authentication and account-management features."
+            >
+              <span class="font-semibold"
+                >What security measures does Reen Bank have?</span
+              >
+              <span class="text-2xl">→</span>
+            </button>
+          </div>
+        </div>
       </div>
+    </section>
 
-    </div>
+    <!-- ==================== PARTNERS ==================== -->
+    <section class="bg-white py-20">
+      <div class="w-full px-5 sm:px-8 lg:px-12 2xl:px-16 text-center">
+        <h2 class="text-2xl md:text-3xl 2xl:text-4xl font-bold text-slate-800">
+          Supported by various finance services
+        </h2>
 
-  </footer>
+        <div
+          class="mt-12 flex flex-wrap items-center justify-center gap-12 md:gap-24"
+        >
+          <!-- Mastercard -->
+          <div class="flex items-center">
+            <div class="w-12 h-12 rounded-full bg-red-500"></div>
+            <div class="w-12 h-12 rounded-full bg-yellow-400 -ml-6"></div>
+          </div>
 
+          <!-- Visa -->
+          <div class="text-5xl font-extrabold italic text-blue-800">VISA</div>
 
-  <!-- =========================
-       MOBILE MENU JAVASCRIPT
-  ========================== -->
+          <!-- PayPal -->
+          <div class="text-4xl font-bold">
+            <span class="text-blue-600">P</span>
+            <span class="text-blue-900">PayPal</span>
+          </div>
 
-  <script>
+          <!-- Payoneer -->
+          <div
+            class="flex items-center gap-2 text-3xl font-semibold text-slate-700"
+          >
+            <span class="text-orange-400 text-5xl">◯</span>
+            Payoneer
+          </div>
+        </div>
+      </div>
+    </section>
 
-    const menuBtn = document.getElementById("menuBtn");
-    const mobileMenu = document.getElementById("mobileMenu");
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-[#D3F3E6] pt-16">
+      <div class="w-full px-5 sm:px-8 lg:px-12 2xl:px-16">
+        <div class="grid lg:grid-cols-2 gap-14 lg:gap-24">
+          <!-- Left: links, logo, socials -->
+          <div class="pb-16">
+            <div class="grid grid-cols-2 gap-10">
+              <div>
+                <h3 class="text-green-700 font-bold text-base">HELP</h3>
+                <div
+                  class="mt-6 space-y-4 text-base 2xl:text-lg text-slate-600"
+                >
+                  <a href="#" class="block hover:text-green-700 transition"
+                    >Help Center</a
+                  >
+                  <a href="#" class="block hover:text-green-700 transition"
+                    >Contact Us</a
+                  >
+                  <a href="#" class="block hover:text-green-700 transition"
+                    >How to Use</a
+                  >
+                </div>
+              </div>
 
-    menuBtn.addEventListener("click", () => {
+              <div>
+                <h3 class="text-green-700 font-bold text-base">ABOUT</h3>
+                <div
+                  class="mt-6 space-y-4 text-base 2xl:text-lg text-slate-600"
+                >
+                  <a href="#" class="block hover:text-green-700 transition"
+                    >About Reen Bank</a
+                  >
+                  <a href="#" class="block hover:text-green-700 transition"
+                    >Terms &amp; Conditions</a
+                  >
+                  <a href="#" class="block hover:text-green-700 transition"
+                    >Privacy Policy</a
+                  >
+                </div>
+              </div>
+            </div>
 
-      mobileMenu.classList.toggle("hidden");
+            <div class="mt-16 flex items-center gap-3">
+              <div
+                class="w-10 h-10 border-2 border-slate-500 rounded-md flex items-center justify-center text-green-700 font-bold text-base bg-white"
+              >
+                rb
+              </div>
+              <span class="font-bold text-slate-700 text-xl">Reen Bank</span>
+            </div>
 
-    });
+            <p class="mt-8 text-sm text-slate-500">
+              © 2026 ReenBank. All rights reserved.
+            </p>
 
+            <div class="flex gap-3 mt-5">
+              <a
+                href="#"
+                class="w-9 h-9 rounded-full bg-green-600 text-white flex items-center justify-center text-sm hover:bg-green-700 transition"
+                >f</a
+              >
+              <a
+                href="#"
+                class="w-9 h-9 rounded-full bg-green-600 text-white flex items-center justify-center text-sm hover:bg-green-700 transition"
+                >t</a
+              >
+              <a
+                href="#"
+                class="w-9 h-9 rounded-full bg-green-600 text-white flex items-center justify-center text-sm hover:bg-green-700 transition"
+                >in</a
+              >
+            </div>
+          </div>
 
-    // Close mobile menu after clicking a link
+          <!-- Right: CTA -->
+          <div
+            class="relative min-h-[360px] rounded-t-3xl overflow-hidden bg-slate-800 bg-[url('/assets/images/Rectangle%20159.png')] bg-cover bg-center"
+          >
+            <div
+              class="relative z-10 h-full flex flex-col justify-center p-8 md:p-12 text-white"
+            >
+              <p class="text-base text-slate-300">New to Reen Bank?</p>
 
-    const mobileLinks = mobileMenu.querySelectorAll("a");
+              <h2
+                class="text-3xl md:text-5xl 2xl:text-6xl font-bold leading-tight mt-3"
+              >
+                Enter your Email <br />and Get Started Now
+              </h2>
 
-    mobileLinks.forEach(link => {
+              <form
+                id="footerForm"
+                class="mt-8 flex flex-col sm:flex-row gap-3"
+              >
+                <input
+                  type="email"
+                  id="footerEmail"
+                  placeholder="Enter your Email"
+                  required
+                  class="flex-1 min-w-0 px-5 py-4 rounded-md bg-white/10 border border-red-300/60 text-white placeholder-white/60 outline-none focus:border-green-400"
+                />
+                <button
+                  type="submit"
+                  class="px-8 py-4 rounded-md bg-green-500 text-white font-semibold hover:bg-green-600 transition"
+                >
+                  Get Started
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-      link.addEventListener("click", () => {
-
-        mobileMenu.classList.add("hidden");
-
-      });
-
-    });
-
-  </script>
-
-</body>
+    <script src="home1.js"></script>
+  </body>
 </html>
